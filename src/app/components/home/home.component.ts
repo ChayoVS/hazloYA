@@ -42,7 +42,6 @@ export class HomeComponent implements OnInit {
         let x: any = element.payload.toJSON();
         x['$key'] = element.key;
         this.toDoListArray.push(x);
-        console.log(this.toDoListArray)
       })
     })
 
@@ -64,8 +63,6 @@ export class HomeComponent implements OnInit {
   }
 
   alterCheck($key: string, isChecked: boolean){
-    console.log($key)
-    console.log(isChecked)
     this.toDoService.checkOrUnCheckTitle($key, !isChecked)
   }
 
