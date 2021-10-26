@@ -11,3 +11,31 @@
         </ul>
     </div>
 </div> -->
+
+<div class="jumbotron" style="padding: 45px 0px">
+    <h4 class="text-center">Lista de Tareas</h4>
+</div>
+
+<div class="input-group">
+    <input type="text" class="form-control" #itemTitle>
+    <div class="input-group-append">
+        <div class="input-group-append cursor-pointer" (click)="onAdd(itemTitle)">
+            <span class="input-group-text"> <i class="bi bi-plus-circle"></i></span>
+        </div>
+    </div>
+</div>
+
+<div style="margin: 5px 0px;">
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of toDoListArray">
+            <span class="cursor-pointer" [class.text-success]="item.isChecked" (click)="alterCheck(item.$key, item.isChecked)">
+                <i class="bi" [ngClass]="item.isChecked ? 'bi-check-circle' : 'bi-circle'" ></i>
+                {{item.title}}
+            </span>
+            <span class="cursor-pointer text-danger float-right" (click)="onDelete(item.$key)">
+                <i class="bi bi-trash"></i>
+            </span>
+        </li>
+    </ul>
+
+</div>
