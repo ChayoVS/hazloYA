@@ -14,12 +14,12 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [AuthGuard, IsAuthGuard]
   },
-  {
-    path: 'admin',
-    component: AdminComponent,
-    canActivate: [AuthGuard],
-    data: { roles: [Role.Admin] }
-  },
+  // {
+  //   path: 'admin',
+  //   component: AdminComponent,
+  //   canActivate: [AuthGuard],
+  //   data: { roles: [Role.Admin] }
+  // },
   {
     path: 'login',
     component: LoginComponent
