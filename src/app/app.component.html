@@ -1,10 +1,21 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user && getUserToken()">
-    <div class="navbar-nav">
-        <a class="nav-item nav-link" routerLink="/">Home</a>
-        <!-- <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a> -->
-        <a class="nav-item nav-link" (click)="logout()">Logout</a>
-    </div>
-</nav>
+<header>
+    <nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="user && getUserToken()">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">Hazlo Ya!</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-item nav-link" routerLink="/">Lista</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">Admin</a> -->
+            <a class="nav-item nav-link logout-nav" (click)="logout()">Logout</a>
+        </div>
+    </nav>
+</header>
+
 
 <!-- main app container -->
 <div class="container">
